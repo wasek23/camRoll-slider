@@ -37,7 +37,9 @@ function camRoll_slider(){
         ),
         'public'      => true,
         'has_archive' => true,
-        'supports'    => array('title', 'editor', 'thumbnail')
+        'show_in_rest' => true,
+        'supports'    => array('title', 'editor', 'thumbnail'),
+        'menu_icon' => 'dashicons-images-alt'
     ));
 }
 add_action('init', 'camRoll_slider');
