@@ -1,0 +1,26 @@
+.camRoll-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+#camRoll-slider {
+  width: 100%;
+  height: 400px;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  #camRoll-slider {
+    height: 275px;
+  }
+
+  #camRoll-slider .crs-bar-roll-current {
+    width: 38px;
+    height: 38px;
+  }
+
+  #camRoll-slider .crs-bar-roll-item {
+    width: 30px;
+    height: 30px;
+  }
+}

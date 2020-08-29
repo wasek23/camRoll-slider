@@ -1,0 +1,1 @@
+$("#camRoll-slider").camRollSlider();
