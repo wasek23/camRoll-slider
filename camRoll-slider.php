@@ -25,8 +25,8 @@ add_action('wp_enqueue_scripts', 'camRoll_css_js');
 
 // Register Custom Post
 function camRoll_slider(){
-    register_post_type('camRoll', array(
-        'labels'      => array(
+    register_post_type('camRoll', [
+        'labels'      => [
             'name'          => __('camRoll Slider', 'camRoll'),
             'add_new'       => __('Add Slider', 'camRoll'),
             'add_new_item'  => __('Add Slider Item', 'camRoll'),
@@ -34,22 +34,23 @@ function camRoll_slider(){
             'new_item'      => __('New Slider Item', 'camRoll'),
             'view_item'     => __('View Slider Item', 'camRoll'),
             'view_items'    => __('View Slider', 'camRoll')
-        ),
+        ],
         'public'      => true,
         'has_archive' => true,
-        'show_in_rest' => true,
+        'show_in_rest'=> true,
         'supports'    => array('title', 'editor', 'thumbnail'),
-        'menu_icon' => 'dashicons-images-alt'
-    ));
+        'taxonomies'  => ['category', 'post_tag'],
+        'menu_icon'   => 'dashicons-images-alt'
+    ]);
 }
 add_action('init', 'camRoll_slider');
 
 
 // ShortCode
 function camRoll_slider_shortcode(){
-    $camRollLoop = new WP_Query(array(
+    $camRollLoop = new WP_Query([
         'post_type' => 'camRoll'
-    ));
+    ]);
 
     if($camRollLoop->have_posts()) : ?>
         <div class="camRoll-container">
